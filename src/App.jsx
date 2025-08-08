@@ -23,7 +23,8 @@ export default function App() {
   }, [username]);
 
   function handleAdd(tx) {
-    fetch("${API_URL}/api/transactions", {
+    console.log ("agregado")
+    fetch(`${API_URL}/api/transactions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...tx, user: username }),
