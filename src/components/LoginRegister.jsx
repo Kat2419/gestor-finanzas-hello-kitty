@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function LoginRegister({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +9,7 @@ export default function LoginRegister({ onLogin }) {
   function handleSubmit(e) {
     e.preventDefault();
     setError("");
-    fetch(`http://localhost:4000/api/user/${mode}`, {
+    fetch(`${API_URL}/api/user/${mode}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),

@@ -5,14 +5,14 @@ import Summary from "./components/Summary";
 import TransactionsByMonth from "./components/TransactionsByMonth";
 import LoginRegister from "./components/LoginRegister"; // <-- Nuevo import
 import "./App.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function App() {
   const [transactions, setTransactions] = useState([]);
   const [username, setUsername] = useState(() => localStorage.getItem("username") || "");
 
   useEffect(() => {
     if (!username) return;
-    fetch(`http://localhost:4000/api/transactions?user=${username}`)
+    fetch(`${API_URL}/api/transactions?user=${username}`)
       .then(res => res.json())
       .then(data => setTransactions(data));
   }, [username]);
@@ -23,7 +23,7 @@ export default function App() {
   }, [username]);
 
   function handleAdd(tx) {
-    fetch("http://localhost:4000/api/transactions", {
+    fetch("${API_URL}/api/transactions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...tx, user: username }),
@@ -35,7 +35,7 @@ export default function App() {
   function handleDelete(index) {
     const tx = transactions[index];
     if (!tx._id) return alert("No se puede borrar, falta ID");
-    fetch(`http://localhost:4000/api/transactions/${tx._id}`, {
+    fetch(`${API_URL}/api/transactions/${tx._id}`, {
       method: "DELETE",
     }).then(() => {
       setTransactions(transactions.filter((_, i) => i !== index));
