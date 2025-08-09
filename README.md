@@ -1,20 +1,50 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✨ Características
+✅ Autenticación simple por usuario (login/registro)
 
-Currently, two official plugins are available:
+➕ Crear transacciones (monto positivo = ingreso, negativo = egreso)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🗑️ Eliminar transacciones
 
-## Expanding the ESLint configuration
+📊 Resumen: ingresos, egresos, balance y totales por categoría
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🗓️ Gastos por mes (agrupados y con total mensual)
 
+💅 Estilos limpios y responsive
 
-
-PAGINA : https://gestor-finanzas-hello-kitty-57xulntd0-katherin-munozs-projects.vercel.app/
-BACK: https://back-gestor.onrender.com
+⚙️ Variables de entorno para apuntar al backend (VITE_API_URL)
 
 
-..
+🧱 Tech Stack
+Frontend: React 19, Vite 7
+
+Linter: ESLint
+
+Despliegue recomendado: Vercel
+
+📦 Requisitos
+Node.js 18+ (recomendado 20)
+
+npm run dev
+
+
+
+LoguinRegister: Muestra el formulario para iniciar seccion o registrarse, lanza mensaje de error si falla la peticion, atado a back.
+
+Summary: suma todas las transacciones, egreso, ingreso total , muestra ingresos, egresos y el total. 
+
+TransationForm: lista las categorias de compras, describe las variables
+
+TransationList: es el listado principal de tu app. Divide las transacciones por tipo, les da formato, y permite borrarlas
+
+
+TransationByMonth: toma las transacciones y las agrupa por mes.
+
+App.jsx: es el componente raíz de todo el gestor de finanzas, y cumple como el cerebro que conecta login, formulario, listas y resúmenes con el backend.
+
+
+Como arrancar Fronted: Npm run dev
+
+.
+
+
