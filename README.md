@@ -15,3 +15,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 PAGINA : https://gestor-finanzas-hello-kitty-57xulntd0-katherin-munozs-projects.vercel.app/
 BACK: https://back-gestor.onrender.com
+
+
+..
